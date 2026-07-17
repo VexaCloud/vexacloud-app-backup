@@ -810,11 +810,11 @@ const searchBar = document.getElementById('searchBar');
 const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
 const zonesurls = [
-    "/assets/zones.json",
+    "assets/zones.json",
 ];
 let zonesURL = zonesurls[Math.floor(Math.random() * zonesurls.length)];
-const coverURL = "/covers";
-const htmlURL = "/html";
+const coverURL = "covers";
+const htmlURL = "html";
 let zones = [];
 let popularityData = {};
 const featuredContainer = document.getElementById('featuredZones');
@@ -837,7 +837,7 @@ async function listZones() {
             shajson = await sharesponse.json();
             sha = shajson[0]['sha'];
             if (sha) {
-                zonesURL = `/assets/zones.json`;
+                zonesURL = `assets/zones.json`;
             }
           } catch (error) {
             try {
@@ -845,7 +845,7 @@ async function listZones() {
                 if (secondarysharesponse && secondarysharesponse.status === 200) {
                     sha = (await secondarysharesponse.text()).trim();
                     if (sha) {
-                        zonesURL = `/assets/zones.json`;
+                        zonesURL = `assets/zones.json`;
                     }
                 }
             } catch(error) {}
